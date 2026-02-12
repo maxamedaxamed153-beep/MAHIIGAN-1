@@ -182,7 +182,7 @@ products.
 <!-- Quick Facts Grid -->
 <section class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
 <div class="neomorphic-card p-6 rounded-2xl text-center">
-<p class="text-3xl font-extrabold text-primary mb-1">4mos+</p>
+<p class="text-3xl font-extrabold text-primary mb-1">1+</p>
 <p class="text-xs uppercase tracking-widest text-[#bab59c]">Years Exp</p>
 </div>
 <div class="neomorphic-card p-6 rounded-2xl text-center">
@@ -199,49 +199,25 @@ products.
 </div>
 </section>
 <!-- Footer / CTA -->
-<footer class="text-center pb-12 border-t border-[#393728] pt-12">
+<<footer class="text-center pb-12 border-t border-[#393728] pt-12">
 <p class="text-[#bab59c] mb-8">Ready to start a project together?</p>
 <div class="flex justify-center gap-4">
-<div class="flex justify-center gap-4">
-    <a href="mailto:maxamedaxamed153@gmail.com" class="neomorphic-card p-4 rounded-full text-primary hover:text-white transition-colors gold-glow">
-        <span class="material-symbols-outlined">mail</span>
-    </a>
-        <button id="shareButton" class="neomorphic-card p-4 rounded-full text-primary hover:text-white transition-colors gold-glow">
-    <span class="material-symbols-outlined">share</span>
+<a href="mailto:maxamedaxamed153@gmail.com">
+  <button class="neomorphic-card p-4 rounded-full text-primary hover:text-white transition-colors gold-glow">
+    <span class="material-symbols-outlined">mail</span>
+  </button>
+</a>
+<button class="neomorphic-card p-4 rounded-full text-primary hover:text-white transition-colors gold-glow">
+<span class="material-symbols-outlined">share</span>
 </button>
-
 <button class="neomorphic-card p-4 rounded-full text-primary hover:text-white transition-colors gold-glow">
 <span class="material-symbols-outlined">description</span>
 </button>
 </div>
-
-        <script>
-    // Waxaan raadinaynaa badhankii aad ID-ga u bixisay
-    const shareBtn = document.getElementById('shareButton');
-
-    shareBtn.addEventListener('click', async () => {
-        if (navigator.share) {
-            try {
-                await navigator.share({
-                    title: 'My Portfolio',
-                    text: 'Fiiri portfolio-gayga!',
-                    url: window.location.href // Wuxuu share-gareynayaa link-ga website-kaaga
-                });
-            } catch (err) {
-                console.log('Cilad ayaa dhacday:', err);
-            }
-        } else {
-            // Haddii browser-ku uusan share lahayn, link-ga koobi gareey
-            navigator.clipboard.writeText(window.location.href);
-            alert('Link-ga waa la koobiyeeyay (Copy)!');
-        }
-    });
-</script>
-        <p class="mt-12 text-xs text-[#393728] uppercase tracking-[0.2em]">© 2026 Personal Portfile</p>
+<p class="mt-12 text-xs text-[#393728] uppercase tracking-[0.2em]">© 2026 created by MAHAMED</p>
 </footer>
 </div>
 </main>
 </div>
 </div>
-
 </body></html>

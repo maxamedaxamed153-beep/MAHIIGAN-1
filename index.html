@@ -207,8 +207,8 @@ products.
     <span class="material-symbols-outlined">mail</span>
   </button>
 </a>
-<button class="neomorphic-card p-4 rounded-full text-primary hover:text-white transition-colors gold-glow">
-<span class="material-symbols-outlined">share</span>
+<button id="shareButton" class="neomorphic-card p-4 rounded-full text-primary hover:text-white transition-colors gold-glow">
+    <span class="material-symbols-outlined">share</span>
 </button>
 <button class="neomorphic-card p-4 rounded-full text-primary hover:text-white transition-colors gold-glow">
 <span class="material-symbols-outlined">description</span>
@@ -220,4 +220,26 @@ products.
 </main>
 </div>
 </div>
-</body></html>
+        <script>
+    const shareBtn = document.getElementById('shareButton');
+
+    shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: 'My Portfolio',
+                    text: 'Fiiri website-kayga!',
+                    url: window.location.href
+                });
+            } catch (err) {
+                console.log('Error sharing:', err);
+            }
+        } else {
+            // Haddii browser-ku uusan share-ka lahayn (sida PC-ga)
+            navigator.clipboard.writeText(window.location.href);
+            alert('Link-ga waa la koobiyeeyay!');
+        }
+    });
+</script>
+</body>
+</html>

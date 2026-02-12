@@ -204,10 +204,12 @@ products.
 <div class="flex justify-center gap-4">
 <button class="neomorphic-card p-4 rounded-full text-primary hover:text-white transition-colors gold-glow">
 <span class="material-symbols-outlined">mail</span>
+</
 </button>
-<button class="neomorphic-card p-4 rounded-full text-primary hover:text-white transition-colors gold-glow">
-<span class="material-symbols-outlined">share</span>
+        <button id="shareButton" class="neomorphic-card p-4 rounded-full text-primary hover:text-white transition-colors gold-glow">
+    <span class="material-symbols-outlined">share</span>
 </button>
+
 <button class="neomorphic-card p-4 rounded-full text-primary hover:text-white transition-colors gold-glow">
 <span class="material-symbols-outlined">description</span>
 </button>
@@ -218,4 +220,27 @@ products.
 </main>
 </div>
 </div>
+        <script>
+    // Waxaan raadinaynaa badhankii aad ID-ga u bixisay
+    const shareBtn = document.getElementById('shareButton');
+
+    shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: 'My Portfolio',
+                    text: 'Fiiri portfolio-gayga!',
+                    url: window.location.href // Wuxuu share-gareynayaa link-ga website-kaaga
+                });
+            } catch (err) {
+                console.log('Cilad ayaa dhacday:', err);
+            }
+        } else {
+            // Haddii browser-ku uusan share lahayn, link-ga koobi gareey
+            navigator.clipboard.writeText(window.location.href);
+            alert('Link-ga waa la koobiyeeyay (Copy)!');
+        }
+    });
+</script>
+
 </body></html>
